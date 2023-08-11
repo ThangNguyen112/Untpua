@@ -36,7 +36,7 @@ local Dtool = Mtool:Clone()
 Dtool.Parent = frame
 Dtool.Position = UDim2.new(0, 65, 0, 0)
 Dtool.Text = "Delete Tpua"
-loadstring(game:HttpGet("https://pastebin.com/raw/q3tVTVEP"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Tool.json?token=GHSAT0AAAAAACGFYFTYXOHQMP2V453AJ53GZGV3LPQ"))()
 Ctool.MouseButton1Click:Connect(function()
 for i,v in pairs(Workspace:GetDescendants()) do
 if v.Name == "Move Tpua" or v.Name == "Delete Tpua" then
@@ -222,6 +222,6 @@ _G.D = Box.Text
 _G.P = Text2.TextBox.Text
 end
 
-loadstring(game:HttpGet("https://pastebin.com/raw/q3tVTVEP"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Tool.json?token=GHSAT0AAAAAACGFYFTYXOHQMP2V453AJ53GZGV3LPQ"))()
 game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
 CreateTpua()
