@@ -1,4 +1,4 @@
---loadstring(game:HttpGet(("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Anchored%20gui.json?token=GHSAT0AAAAAACGFYFTYHI5NNZNSWDHEQ63QZGV3OOQ"), true))()
+--loadstring(game:HttpGet(("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Anchored%20gui.json"), true))()
 if not game.Players.chao985.PlayerGui:FindFirstChild("Unanchored menu") then
 local gui = Instance.new("ScreenGui", game.Players.chao985.PlayerGui)
 gui.Name = "Unanchored menu"
@@ -222,6 +222,6 @@ _G.D = Box.Text
 _G.P = Text2.TextBox.Text
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Tool.json?token=GHSAT0AAAAAACGFYFTYXOHQMP2V453AJ53GZGV3LPQ"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Tool.json"))()
 game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
 CreateTpua()
