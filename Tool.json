@@ -1,0 +1,45 @@
+function CreateTpua()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Create Tpua"
+tool.Activated:connect(function()
+if mouse.Target.Anchored == false then
+if not mouse.Target:FindFirstChild("BodyPosition") then
+BP = Instance.new("BodyPosition", mouse.Target)
+BP.Position = mouse.Target.Position
+BP.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+BP.D = _G.D
+BP.P = _G.P
+end end end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+end
+function MoveTpua()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Move Tpua"
+tool.Activated:connect(function()
+local pos = mouse.Hit
+pos = Vector3.new(pos.X,pos.Y,pos.Z)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+v.Position = pos
+end end end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+end
+function DeleteTpua()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Delete Tpua"
+tool.Activated:connect(function()
+if mouse.Target.Anchored == false then
+if mouse.Target:FindFirstChild("BodyPosition") then
+mouse.Target.BodyPosition:Destroy()
+end end end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+end

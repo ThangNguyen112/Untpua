@@ -1,0 +1,227 @@
+--loadstring(game:HttpGet(("https://pastebin.com/raw/LW8hKNcx"), true))()
+if not game.Players.chao985.PlayerGui:FindFirstChild("Unanchored menu") then
+local gui = Instance.new("ScreenGui", game.Players.chao985.PlayerGui)
+gui.Name = "Unanchored menu"
+local menu = Instance.new("TextButton", gui)
+local frame = Instance.new("Frame", menu)
+frame.Position = UDim2.new(0, -20, 0, -80)
+frame.Size = UDim2.new(0, 60, 0, 60)
+frame.BackgroundTransparency = 1
+frame.Visible = false
+menu.Position = UDim2.new(0, 457, 0, 282)
+menu.Size = UDim2.new(0, 20, 0, 20)
+menu.Font = Enum.Font.SourceSansBold
+menu.Text = "+"
+menu.TextScaled = true
+menu.MouseButton1Click:Connect(function()
+if menu.Text == "+" then
+frame.Visible = true
+menu.Text = "-"
+else
+frame.Visible = false
+menu.Text = "+"
+end end) 
+local Mtool = Instance.new("TextButton", frame)
+Mtool.Size = UDim2.new(0, 60, 0, 60)
+Mtool.BackgroundColor3 = Color3.fromRGB(31,31,31)
+Mtool.BackgroundTransparency = .5
+Mtool.BorderSizePixel = 0
+Mtool.TextColor3 = Color3.fromRGB(255,255,255)
+Mtool.Text = "Move Tpua"
+local Ctool = Mtool:Clone()
+Ctool.Parent = frame
+Ctool.Text = "Create Tpua"
+Ctool.Position = UDim2.new(0, -65, 0, 0)
+local Dtool = Mtool:Clone()
+Dtool.Parent = frame
+Dtool.Position = UDim2.new(0, 65, 0, 0)
+Dtool.Text = "Delete Tpua"
+loadstring(game:HttpGet("https://pastebin.com/raw/q3tVTVEP"))()
+Ctool.MouseButton1Click:Connect(function()
+for i,v in pairs(Workspace:GetDescendants()) do
+if v.Name == "Move Tpua" or v.Name == "Delete Tpua" then
+v:Destroy()
+CreateTpua()
+end end end)
+Mtool.MouseButton1Click:Connect(function()
+for i,v in pairs(Workspace:GetDescendants()) do
+if v.Name == "Create Tpua" or v.Name == "Delete Tpua" then
+v:Destroy()
+MoveTpua()
+end end end)
+Dtool.MouseButton1Click:Connect(function()
+for i,v in pairs(Workspace:GetDescendants()) do
+if v.Name == "Create Tpua" or v.Name == "Move Tpua" then
+v:Destroy()
+DeleteTpua()
+end end end)
+local Mmenu = Instance.new("TextButton", Mtool)
+Mmenu.Name = "Mmenu"
+Mmenu.BackgroundTransparency = 1
+Mmenu.TextColor3 = Color3.fromRGB(255,255,255)
+Mmenu.Font = Enum.Font.SourceSans
+Mmenu.Text = "+"
+Mmenu.TextSize = 14
+Mmenu.Size = UDim2.new(0,10,0,10)
+local Dmenu = Mmenu:Clone()
+Dmenu.Name = "Dmenu"
+Dmenu.Parent = Dtool
+local settingM = Instance.new("ScrollingFrame", frame)
+settingM.Name = "settingM"
+settingM.Position = UDim2.new(0,0,0,-60)
+settingM.Size = UDim2.new(0,60,0,60)
+settingM.BackgroundColor3 = Color3.fromRGB(255,255,255)
+settingM.BorderSizePixel = 0
+settingM.CanvasSize = UDim2.new(0,0,0,80)
+settingM.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+settingM.ScrollBarImageTransparency = .7
+settingM.ScrollBarThickness = 4
+settingM.ScrollingDirection = Enum.ScrollingDirection.Y
+settingM.Visible = false
+local settingD = settingM:Clone()
+settingD.Name = "settingD"
+settingD.Parent = frame
+settingD.Position = UDim2.new(0,65,0,-60)
+Mmenu.MouseButton1Click:Connect(function()
+if settingM.Visible == false then
+settingM.Visible = true
+else settingM.Visible = false
+end
+end)
+local Text = Instance.new("TextBox", settingM)
+local Box = Instance.new("TextBox", Text)
+local Bx = Box.Text
+Text.Active = false
+Text.Text = "D:"
+Text.Size = UDim2.new(0,20,0,20)
+Text.BackgroundTransparency = 1
+Box.ClearTextOnFocus = false
+Box.BackgroundColor3 = Color3.fromRGB(255,255,255)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+Box.Text = v.D
+else
+Box.Text = "1250"
+end end
+Box.TextSize = 7
+Box.Size = UDim2.new(0,30,0,10)
+Box.Position = UDim2.new(0,20,0,5)
+Box:GetPropertyChangedSignal("Text"):Connect(function()
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+v.D = Box.Text
+_G.D = Box.Text
+end end
+end)
+local Text2 = Text:Clone()
+local Tx = Text2.TextBox.Text
+Text2.Parent = settingM
+Text2.Text = "P:"
+Text2.Position = UDim2.new(0,0,0,15)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+Text2.TextBox.Text = v.P
+else
+Text2.TextBox.Text = "10000"
+end end
+Text2.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+v.P = Text2.TextBox.Text
+_G.P = Text2.TextBox.Text
+end end
+end)
+local Text3 = Text:Clone()
+local Button = Instance.new("TextButton", Text3)
+Text3.TextBox:Destroy()
+Text3.Parent = settingM
+Text3.Text = "Collide"
+Text3.Position = UDim2.new(0,12,0,30)
+Button.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Button.TextSize = 5
+Button.Position = UDim2.new(0,33,0,5)
+Button.Size = UDim2.new(0,10,0,10)
+Button.Text = "✔️"
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+if v.Parent.CanCollide == true then
+Button.Text = "✔️"
+else
+Button.Text = ""
+end end end
+Button.MouseButton1Click:Connect(function()
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+if Button.Text == "" then
+v.Parent.CanCollide = true
+Button.Text = "✔️"
+else
+v.Parent.CanCollide = false
+Button.Text = ""
+end end end
+end)
+local Text4 = Text:Clone()
+Text4.Parent = settingM
+Text4.Text = "Position"
+Text4.Position = UDim2.new(0,20,0,45)
+Text4.TextBox.Position = UDim2.new(0,-15,0,20)
+Text4.TextBox.Size = UDim2.new(0,30,0,10)
+Text4.TextBox.TextScaled = true
+local Button2 = Button:Clone()
+Button2.Parent = Text4
+Button2.Position = UDim2.new(0,20,0,20)
+Button2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Button2.Text = ""
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then 
+local pos = v.Position
+Text4.TextBox.Text = tostring(Vector3.new(math.round(pos.X),math.round(pos.Y),math.round(pos.Z)))
+else
+Text4.TextBox.Text = ""
+end end
+Button2.MouseButton1Click:Connect(function()
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("BodyPosition") then
+v.Position = Vector3.new(Text4.TextBox.Text:match("(.+), (.+), (.+)"))
+end end
+end)           
+Dmenu.MouseButton1Click:Connect(function()
+if settingD.Visible == false then
+settingD.Visible = true
+else settingD.Visible = false
+end
+end)
+local Text5 = Text3:Clone()
+Text5.TextButton.Position = UDim2.new(0,35,0,5)
+Text5.Position = UDim2.new(0,0,0,0)
+Text5.Size = UDim2.new(0,35,0,20)
+Text5.Parent = settingD
+Text5.Text = "DeAll"
+Text5.TextButton.Text = ""
+Text5.TextButton.MouseButton1Click:Connect(function()
+for i,v in pairs(workspace:GetDescendants()) do
+    if v:IsA("BodyPosition") then v:Destroy()
+end end
+end)   
+local Text6 = Text5:Clone()
+Text6.Parent = settingD
+Text6.Position = UDim2.new(0,0,0,15)
+Text6.Text = "DeToch"
+Text6.Position = UDim2.new(.09,0,0,15)
+Text6.TextButton.Position = UDim2.new(0,40,0,5)
+Text6.TextButton.Text = ""
+Text6.TextButton.MouseButton1Click:Connect(function()
+if Text6.TextButton.Text == "" then
+Text6.TextButton.Text = "✔️"
+else                                            
+Text6.TextButton.Text = ""
+end 
+end)
+
+_G.D = Box.Text
+_G.P = Text2.TextBox.Text
+end
+
+loadstring(game:HttpGet("https://pastebin.com/raw/q3tVTVEP"))()
+game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
+CreateTpua()
