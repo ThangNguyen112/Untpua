@@ -1,4 +1,4 @@
---loadstring(game:HttpGet(("https://pastebin.com/raw/LW8hKNcx"), true))()
+--loadstring(game:HttpGet(("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/Anchored%20gui.json?token=GHSAT0AAAAAACGFYFTYHI5NNZNSWDHEQ63QZGV3OOQ"), true))()
 if not game.Players.chao985.PlayerGui:FindFirstChild("Unanchored menu") then
 local gui = Instance.new("ScreenGui", game.Players.chao985.PlayerGui)
 gui.Name = "Unanchored menu"
