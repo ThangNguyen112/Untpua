@@ -1,3 +1,4 @@
+--loadstring(game:HttpGet(("https://raw.githubusercontent.com/ThangNguyen112/Untpua/main/dex.json"), true))()
 CreateGui = function()
 local NewGuiPart1 = Instance.new("ScreenGui")
 local NewGuiPart2 = Instance.new("Frame")
